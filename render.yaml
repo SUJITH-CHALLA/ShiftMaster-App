@@ -3,14 +3,12 @@ services:
     name: shiftmaster-app
     runtime: node
     plan: starter
-    buildCommand: npm install && npm run build
+    buildCommand: npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_ENV
         value: production
-      # Add additional environment variables here as needed
-      # Example:
-      # - key: DATABASE_URL
-      #   sync: false
-      # - key: API_KEY
-      #   sync: false
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
